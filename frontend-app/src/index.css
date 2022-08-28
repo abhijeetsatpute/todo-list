@@ -15,9 +15,9 @@ body {
 button {
   font: inherit;
   cursor: pointer;
-  border: 1px solid purple;
+  border: 1px solid rgb(20, 186, 106);
   color: white;
-  background: purple;
+  background: rgb(27, 159, 155);
   padding: 0.5rem 1.5rem;
   border-radius: 10px;
 }

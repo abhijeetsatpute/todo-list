@@ -1,7 +1,12 @@
 import { Application } from "https://deno.land/x/oak/mod.ts";
+import * as flags from "https://deno.land/std@0.153.0/flags/mod.ts";
 
 import todoRoutes from './routes/todo.ts';
 import { connect } from './helpers/db_client.ts';
+const { args, exit } = Deno;
+const DEFAULT_PORT = 8080;
+const argPort = flags.parse(args).port;
+const port = argPort ? Number(argPort) : DEFAULT_PORT;
 
 connect();
 
@@ -23,4 +28,4 @@ app.use(async (ctx, next) => {
 app.use(todoRoutes.routes());
 app.use(todoRoutes.allowedMethods());
 
-await app.listen({ port: 8000 });
+await app.listen({ port });
