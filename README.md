@@ -7,7 +7,7 @@ API example with Deno, Oak and mongodb
 ## Getting Started
 
 ```
-deno run --allow-net app.ts
+deno run --allow-net --allow-read app.ts
 ```
 
 ## Methods
