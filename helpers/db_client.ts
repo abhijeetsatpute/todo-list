@@ -1,3 +1,4 @@
+import { config } from "https://deno.land/x/dotenv/mod.ts";
 import {
     Bson,
     MongoClient,
@@ -10,9 +11,7 @@ export async function connect() {
   const client = new MongoClient();
 
   // Connect using srv url
-  await client.connect(
-      "mongodb+srv://abhi:hunter123@cluster0.pbbtxll.mongodb.net/deno?authMechanism=SCRAM-SHA-1",
-    );
+  await client.connect(config().MOGO_URI);
   db = client.database('deno-todo');
 }
 
